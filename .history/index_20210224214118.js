@@ -10,11 +10,12 @@ function mondayWork (event="go to the office") {
 
 
 
-
-function wrapAdjective (visualFlair="*") {
-    return function (xxx= "special") {
-        return `You are ${visualFlair}${xxx}${visualFlair}!`
+function wrapAdjective () {
+    return function (word="special") {
+        return function (wrap = "*") {
+            return (`You are ${wrap} ${word} ${wrap}`)
+        }
     }
 }
 
-wrapAdjective("%")("a dedicated programmer")
+wrapAdjective("%")("a dedicated programmer");
